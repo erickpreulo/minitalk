@@ -10,19 +10,19 @@
 #                                                                              #
 # **************************************************************************** #
 
+SRCS = ft_atoi.c ft_putchar.c ft_putstr.c
+
 SERVER = server
-SERVER_SRCS = server.o
+SERVER_SRCS = server.o ft_atoi.o ft_putchar.o ft_putstr.o
 
 CLIENT = client
-CLIENT_SRCS = client.o
-
-INCLUDE = -I .
+CLIENT_SRCS = client.o ft_atoi.o ft_putchar.o ft_putstr.o
 
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-all : $(SERVER) $(CLIENT)
+all : $(SERVER) $(CLIENT) 
 
 $(CLIENT) : $(CLIENT_SRCS)
 	@$(CC) $(CLIENT_SRCS) -o $(CLIENT)
@@ -34,7 +34,7 @@ $(SERVER) : $(SERVER_SRCS)
 	@$(CC) $(CFLAGS) $< -c
 
 clean :
-	@rm -f client.o server.o
+	@rm -f *.o
 
 fclean : clean
 	@rm -f $(SERVER) $(CLIENT)

@@ -14,5 +14,16 @@
 
 int     main(int argc, char **argv)
 {
+    pid_t pid;
 
+    (void)argv;
+    if (argc != 1)
+    {
+        ft_putstr(ERROR3);
+        return (1);
+    }
+    else
+    {
+        pid = getpid();
+    }
 }

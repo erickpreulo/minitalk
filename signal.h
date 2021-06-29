@@ -16,10 +16,19 @@
 #include <signal.h>
 #include <unistd.h>
 
+#define ERROR1 "usage: ./client [pid server] [message]\n"
+#define ERROR2 "Unknow PID.\n"
+#define ERROR3 "usage: ./server\n"
+
 typedef struct      s_sig
 {
-    int     i;
+    int     pid_server;
     char    *buff;
     int     cpy;
 }                   t_sig;
+
+void    ft_putchar(char c);
+void    ft_putstr(char *c);
+int	ft_atoi(const char *str);
+
 #endif

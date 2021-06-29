@@ -13,7 +13,7 @@
 SRCS = ft_atoi.c ft_putchar.c ft_putstr.c
 
 SERVER = server
-SERVER_SRCS = server.o ft_atoi.o ft_putchar.o ft_putstr.o
+SERVER_SRCS = server.o ft_atoi.o ft_putchar.o ft_putstr.o ft_itoa.o
 
 CLIENT = client
 CLIENT_SRCS = client.o ft_atoi.o ft_putchar.o ft_putstr.o

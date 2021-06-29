@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 06:59:28 by egomes            #+#    #+#             */
-/*   Updated: 2021/06/28 07:02:20 by egomes           ###   ########.fr       */
+/*   Updated: 2021/06/29 17:25:30 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,9 @@
 void    ft_putchar(char c)
 {
     write(1, &c, 1);
+}
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }

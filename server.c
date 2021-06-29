@@ -15,6 +15,7 @@
 int     main(int argc, char **argv)
 {
     pid_t pid;
+    t_sig server;
 
     (void)argv;
     if (argc != 1)
@@ -25,5 +26,10 @@ int     main(int argc, char **argv)
     else
     {
         pid = getpid();
+        server.pid_str = (ft_itoa(pid));
+        if (server.pid_str == 0)
+		    exit(0);
+	    ft_putstr_fd(server.pid_str, 1);
+        ft_putchar('\n');
     }
 }

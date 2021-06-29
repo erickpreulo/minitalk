@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 07:00:10 by egomes            #+#    #+#             */
-/*   Updated: 2021/06/28 07:02:24 by egomes           ###   ########.fr       */
+/*   Updated: 2021/06/29 17:34:56 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,19 @@ void    ft_putstr(char *c)
         ft_putchar(c[i]);
         i++;
     }
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
+
+	i = 0;
+	if (fd != 0 && s != 0)
+	{
+		while (s[i])
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
+	}
 }

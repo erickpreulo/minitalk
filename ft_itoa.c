@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 17:28:45 by egomes            #+#    #+#             */
-/*   Updated: 2021/06/29 17:33:35 by egomes           ###   ########.fr       */
+/*   Updated: 2021/07/22 17:07:39 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	get_size(int n)
 	}
 	return (size);
 }
+
 char	*ft_newstr(size_t size)
 {
 	char	*str;

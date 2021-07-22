@@ -13,12 +13,12 @@
 SRCS = ft_atoi.c ft_putchar.c ft_putstr.c
 
 SERVER = server
-SERVER_SRCS = server.o ft_atoi.o ft_putchar.o ft_putstr.o ft_itoa.o
+SERVER_SRCS = server.o ft_putchar.o ft_putstr.o ft_itoa.o ft_memset.o
 
 CLIENT = client
 CLIENT_SRCS = client.o ft_atoi.o ft_putchar.o ft_putstr.o
 
-CC = gcc
+CC = gcc -fsanitize=address -g
 
 CFLAGS = -Wall -Wextra -Werror
 

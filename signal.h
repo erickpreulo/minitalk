@@ -27,13 +27,14 @@ typedef struct      s_sig
     char    *pid_str;
     char    *buff;
     int     cpy;
+    char    *av;
 }                   t_sig;
 
 void    ft_putchar(char c);
-void	ft_putchar_fd(char c, int fd);
-void    ft_putstr(char *c);
-void	ft_putstr_fd(char *s, int fd);
+void    ft_putstr(char *s);
 int	ft_atoi(const char *str);
 char	*ft_itoa(int n);
+void	recive(int sig);
+void    ft_memset(char *str, int i);
 
 #endif

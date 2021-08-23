@@ -12,11 +12,11 @@
 
 #include "signal.h"
 
-void	recive(int sig)
+void	receive(int sig)
 {
 	static size_t	i;
 	static int		bit;
-	static char		buf[1000];
+	static char		buf[2000];
 
 	if (--bit == -1)
 	{
@@ -28,39 +28,37 @@ void	recive(int sig)
 		buf[i] |= (1 << bit);
 	else if (sig == SIGUSR2)
 		buf[i] &= ~(1 << bit);
-	if (i == 999 || buf[i] == 127)
+	if (i == 1999 || buf[i] == 127)
 	{
 		buf[i] = '\0';
 		write(1, buf, i + 1);
-		ft_memset(buf, i);                                                                                  
+		ft_memset(buf, i);
+		write(1, "\n", 1);
 		i = 0;
 		bit = 0;
 	}
 }
 
-int     main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    pid_t pid;
-    t_sig server;
+	pid_t	pid;
+	t_sig	server;
 
-    (void)argv;
-    if (argc != 1)
-    {
-        ft_putstr(ERROR3);
-        return (1);
-    }
-    else
-    {
-        pid = getpid();
-        server.pid_str = (ft_itoa(pid));
-        if (server.pid_str == 0)
-		    exit(0);
-	    ft_putstr(server.pid_str);
-        ft_putchar('\n');
-        while (42)
-        {
-            signal(SIGUSR1, recive);
-            signal(SIGUSR2, recive);
-        }
-    }
+	(void)argv;
+	if (argc != 1)
+	{
+		ft_putstr(ERROR3);
+		return (1);
+	}
+	pid = getpid();
+	server.pid_str = (ft_itoa(pid));
+	if (server.pid_str == 0)
+		exit(0);
+	ft_putstr(server.pid_str);
+	ft_putchar('\n');
+	while (42)
+	{
+		signal(SIGUSR1, receive);
+		signal(SIGUSR2, receive);
+	}
 }

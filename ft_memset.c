@@ -12,14 +12,14 @@
 
 #include "signal.h"
 
-void    ft_memset(char *str, int i)
+void	ft_memset(char *str, int i)
 {
-    int j;
+	int	j;
 
-    j = 0;
-    while (j <= i)
-    {
-        str[j] = '\0';
-        j++;
-    }
+	j = 0;
+	while (j <= i)
+	{
+		str[j] = '\0';
+		j++;
+	}
 }

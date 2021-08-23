@@ -14,7 +14,7 @@
 
 static int	send_ascii(t_sig *sig, char c)
 {
-    int bit;
+	int	bit;
 
 	bit = 7;
 	while (--bit > -1)
@@ -30,7 +30,7 @@ static int	send_ascii(t_sig *sig, char c)
 
 static int	send_message(t_sig *sig)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (sig->av[i] >= 32 && sig->av[i] <= 126)
@@ -43,28 +43,28 @@ static int	send_message(t_sig *sig)
 	while (i < 7)
 	{
 		kill(sig->pid_server, SIGUSR1);
-		usleep(2000);
+		usleep(50);
 		i++;
 	}
 	return (0);
 }
 
-int     main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_sig sig;
+	t_sig	sig;
 
-    sig.av = argv[2];
-    if (argc != 3)
-    {
-        ft_putstr(ERROR1);
-        return (1);
-    }
-    sig.pid_server = ft_atoi(argv[1]);
-    if (sig.pid_server == 0)
-    {
-        ft_putstr(ERROR2);
-        return (1);
-    }
-    send_message(&sig);
-    return(0);
+	sig.av = argv[2];
+	if (argc != 3)
+	{
+		ft_putstr(ERROR1);
+		return (1);
+	}
+	sig.pid_server = ft_atoi(argv[1]);
+	if (sig.pid_server == 0)
+	{
+		ft_putstr(ERROR2);
+		return (1);
+	}
+	send_message(&sig);
+	return (0);
 }
